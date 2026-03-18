@@ -69,7 +69,7 @@ The prediction file should contain one raw model output per question:
 [
   {
     "id": 0,
-    "raw_output": "1109."
+    "raw_output": "1109"
   },
   {
     "id": 1,
