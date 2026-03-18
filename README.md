@@ -116,6 +116,20 @@ Example:
   }
 ]
 ```
+### Example Files
+
+Example gold and prediction files are provided in:
+
+- `evaluation/examples/example_gold.json`
+- `evaluation/examples/example_pred.json`
+
+You can test the evaluator with:
+
+```bash
+python evaluation/evaluate_brink.py \
+  --gold evaluation/examples/example_gold.json \
+  --pred evaluation/examples/example_pred.json
+```
 
 ## Installation
 
