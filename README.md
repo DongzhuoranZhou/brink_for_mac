@@ -63,13 +63,19 @@ python evaluation/evaluate_brink.py \
 
 ### Prediction File Format
 
-The prediction file should contain one raw model output per question:
+The prediction file should contain one **raw model output string** per question. The evaluator will internally split the raw string into candidate answers using delimiters such as commas, spaces, or newlines, and then apply normalization.
+
+Example:
 
 ```json
 [
   {
-    "id": "0",
-    "raw_output": "USD"
+    "id": "q1",
+    "raw_output": "Paris, London"
+  },
+  {
+    "id": "q2",
+    "raw_output": "Marriage"
   }
 ]
 ```
@@ -87,10 +93,16 @@ Example:
 ```json
 [
   {
-    "id": "0",
-    "question": "What is the currency of the estimated budget for Project X?",
-    "answers": ["USD"],
-    "hard_answer": "USD"
+    "id": "q1",
+    "question": "Which cities are associated with Country X in the benchmark?",
+    "answers": ["Paris", "London"],
+    "hard_answer": "Paris"
+  },
+  {
+    "id": "q2",
+    "question": "What is the relationship between Person A and Person B?",
+    "answers": ["Marriage"],
+    "hard_answer": "Marriage"
   }
 ]
 ```
