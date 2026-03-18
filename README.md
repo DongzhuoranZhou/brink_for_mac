@@ -61,9 +61,19 @@ python evaluation/evaluate_brink.py \
   --pred path/to/predictions.json
 ```
 
+## Prediction Input Requirement
+
+The official evaluation script expects the **model's raw output string** as input, without any user-side manual or model-specific postprocessing.
+
+This means:
+- pass the model's **original generated output** directly to the evaluation script
+- do **not** manually rewrite, filter, rerank, or normalize predictions before evaluation
+
+Inside the evaluator, the raw output string is converted into a prediction set using the official BRINK postprocessing procedure. Following the paper, the evaluator first applies a splitting function to convert the raw output string into candidate answers, and then applies normalization before matching predictions against gold answers.
+
 ### Prediction File Format
 
-The prediction file should contain one **raw model output string** per question. The evaluator will internally split the raw string into candidate answers using delimiters such as commas, spaces, or newlines, and then apply normalization.
+The prediction file should contain one **raw model output string** per question.
 
 Example:
 
