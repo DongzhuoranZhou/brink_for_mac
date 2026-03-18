@@ -68,12 +68,12 @@ The prediction file should contain one raw model output per question:
 ```json
 [
   {
-    "id": 0,
-    "raw_output": "1109"
+    "id": "0",
+    "raw_output": "USD"
   },
   {
-    "id": 1,
-    "raw_output": "205, 138"
+    "id": "1",
+    "raw_output": "Paris"
   }
 ]
 ```
@@ -91,10 +91,16 @@ Example:
 ```json
 [
   {
-    "id": 0,
-    "question": "What is the currency of the estimated budget for 5297?",
-    "answers": ["1109"],
-    "hard_answer": "1109"
+    "id": "0",
+    "question": "What is the currency of the estimated budget for Project X?",
+    "answers": ["USD"],
+    "hard_answer": "USD"
+  },
+  {
+    "id": "1",
+    "question": "Which city is the administrative center of Region Y?",
+    "answers": ["Paris"],
+    "hard_answer": "Paris"
   }
 ]
 ```
